@@ -176,13 +176,14 @@ func _loadAtlas(metaPath, format):
 
 func _loadAtlasTex(metaPath, atlas):
 	var path =  atlas.imagePath
-	var tex = null
-	if path.begins_with("res://"):
-		path = path.substr(6,path.length()-6)	
-	if ResourceLoader.has(path):
-		tex = ResourceLoader.load(path)
-	else:
-		tex = ImageTexture.new()
-		tex.load(path)
-	return tex
+	return ResourceLoader.load(path)
+#	var tex = null
+#	if path.begins_with("res://"):
+#		path = path.substr(6,path.length()-6)	
+#	if ResourceLoader.has(path):
+#		tex = ResourceLoader.load(path)
+#	else:
+#		tex = ImageTexture.new()
+#		tex.load(path)
+#	return tex
 	
